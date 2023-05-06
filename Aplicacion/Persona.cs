@@ -18,7 +18,7 @@ abstract class Persona {
     public override string ToString() => this.DNI + " " + this.Apellido + ", " + this.Nombre; // El telefono hay q imprimirlo manual en la clase derivada :)
 
     
-    /*public int Id { get; set; } //en console se accede a esta propiedad
+    /*public int Id { get; set; } //en console se accede a esta propiedad --> por qué el set es publico????????????
     public int DNI { get; set; } //en el trabajo lo declaran como entero
     public string Apellido { get; set; }
     public string Nombre { get; set; }
