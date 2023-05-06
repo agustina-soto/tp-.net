@@ -16,11 +16,25 @@ abstract class Persona {
     }
 
     public override string ToString() => this.DNI + " " + this.Apellido + ", " + this.Nombre; // El telefono hay q imprimirlo manual en la clase derivada :)
-//  ves  lo  que  escriboo???
+
     
-    // chi
-    
-    //joya
+    /*public int Id { get; set; } //en console se accede a esta propiedad
+    public int DNI { get; set; } //en el trabajo lo declaran como entero
+    public string Apellido { get; set; }
+    public string Nombre { get; set; }
+    public string? Telefono { get; set; }
+
+    protected Persona(int dni, string apellido, string nombre, string telefono): this (dni, apellido, nombre)
+    {  
+        Telefono = telefono;
+    }
+
+    protected Persona (int dni, string apellido, string nombre)
+    {
+        DNI = dni;
+        Apellido = apellido;
+        Nombre = nombre;
+    }*/
     
     
 }
