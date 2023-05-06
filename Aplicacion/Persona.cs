@@ -8,7 +8,7 @@ abstract class Persona {
     public string Nombre { get; set; }
     public string Telefono { get; set; }
 
-    protected Persona(string dni, string apellido, string nombre, string telefono){  // por que telefono no??
+    protected Persona(string dni, string apellido, string nombre, string telefono){
         DNI = dni;
         Apellido = apellido;
         Nombre = nombre;
