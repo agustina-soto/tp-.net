@@ -1,0 +1,6 @@
+namespace aseguradora;
+
+interface IRepositorioPoliza {
+
+
+}
