@@ -2,11 +2,11 @@ namespace aplicacion;
 
 class Titular : Persona {
 
-    //puse los "?" para que no me tire warning --> que tiene que nos tire el warning? si le ponemos a estos el ? se lo tenemos que poner a todos
+    //chequear si agregar "?" a los tipo referencia, xq tira warning?? justificar en el tp explicativo en caso de ponerlos
     private static int s_id = 0;
-    public string? Direccion { get; set; }
-    public string? Email { get; set; }
-    public List<Vehiculo>? Vehiculos { get; private set; } //esta bien el modificador de acceso??? --> calculo que si, depende de como implementemos las interfaces q comunican un vehiculo y un titular
+    public string Direccion { get; set; }
+    public string Email { get; set; }
+    public List<Vehiculo> Vehiculos { get; private set; } //esta bien el modificador de acceso??? --> calculo que si, depende de como implementemos las interfaces q comunican un vehiculo y un titular
 
     public Titular(int dni, string apellido, string nombre, string telefono, string direccion, string email) : base(dni, apellido, nombre, telefono){
         Id = ++s_id;
