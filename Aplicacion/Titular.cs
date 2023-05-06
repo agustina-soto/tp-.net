@@ -13,9 +13,9 @@ class Titular : Persona {
         Email = email;
     }
     
-    public Titular (int dni, string? apellido, string? nombre) : base(dni, apellido, nombre){ /* Siempre se instancia con este en console --> deberiamos dejar el otro
-                                                                                                tambien? para mi conceptualmente es mejor, pero evidentemente no les
-                                                                                                importa mucho ese tema asiq no se que preferis hacer vos */
+    // Siempre se instancia con este en console --> deberiamos dejar el otro tambien? para mi conceptualmente
+    // es mejor, pero evidentemente no les importa mucho ese tema asiq no se que preferis hacer vos
+    public Titular (int dni, string? apellido, string? nombre) : base(dni, apellido, nombre){
         Id = ++s_id;
     }
 
@@ -30,9 +30,9 @@ class Titular : Persona {
     public string? Email { get; set; }
     public List<Vehiculo>? Vehiculos { get; private set; } //esta bien el modificador de acceso??? --> calculo que si, depende de como implementemos las interfaces q comunican un vehiculo y un titular
 
-    public Titular (int dni, string apellido, string nombre) : base(dni, apellido, nombre){ /* siempre se instancia con este en console --> deberiamos dejar el otro
-                                                                                                tambien? para mi conceptualmente es mejor, pero evidentemente no les
-                                                                                                importa mucho ese tema asiq no se que preferis hacer vos */
+    // Siempre se instancia con este en console --> deberiamos dejar el otro tambien? para mi conceptualmente
+    // es mejor, pero evidentemente no les importa mucho ese tema asiq no se que preferis hacer vos
+    public Titular (int dni, string apellido, string nombre) : base(dni, apellido, nombre){
         Id = ++s_id;
     }
 
@@ -41,4 +41,3 @@ class Titular : Persona {
 
     public override string ToString() => DNI + " " + Apellido + ", " + Nombre; //solucionar
     */
-}
