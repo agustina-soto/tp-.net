@@ -4,8 +4,8 @@ abstract class Persona {
 
     public int Id { get; protected set; }
     public int DNI { get; set; }
-    public string Apellido { get; set; }
-    public string Nombre { get; set; }
+    public string? Apellido { get; set; }
+    public string? Nombre { get; set; }
     public string? Telefono { get; set; }
 
     protected Persona(int dni, string apellido, string nombre, string telefono){
