@@ -1,4 +1,4 @@
-namespace aplicacion;
+namespace aseguradora;
 
 class AgregarPolizaUseCase 
 {
@@ -9,4 +9,6 @@ class AgregarPolizaUseCase
         _repo = repo; //inyeccion por constructor
     }
     
+    // Aca no tiene que ir el metodo "void Ejecutar(Poliza p){}" ???
+    // Segun la consigna en la carilla 2
 }
