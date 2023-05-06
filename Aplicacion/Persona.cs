@@ -17,4 +17,6 @@ abstract class Persona {
 
     public override string ToString() => this.DNI + " " + this.Apellido + ", " + this.Nombre; // El telefono hay q imprimirlo manual en la clase derivada :)
 //  ves  lo  que  escriboo???
+    
+    // chi
 }
