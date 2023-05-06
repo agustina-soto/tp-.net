@@ -1,6 +1,7 @@
 namespace aplicacion;
 
-class Poliza {
+class Poliza: IRepositorioPoliza //interfaz para aplicar la inyeccion   
+{
 
     private static int s_id = 0;
     public int Id { get; }
