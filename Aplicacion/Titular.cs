@@ -13,8 +13,6 @@ class Titular : Persona {
         Email = email;
     }
     
-    // Siempre se instancia con este en console --> deberiamos dejar el otro tambien? para mi conceptualmente
-    // es mejor, pero evidentemente no les importa mucho ese tema asiq no se que preferis hacer vos
     public Titular (int dni, string? apellido, string? nombre) : base(dni, apellido, nombre){
         Id = ++s_id;
     }
