@@ -24,10 +24,6 @@ abstract class Persona {
     public string Nombre { get; set; }
     public string? Telefono { get; set; }
 
-    protected Persona(int dni, string apellido, string nombre, string telefono): this (dni, apellido, nombre)
-    {  
-        Telefono = telefono;
-    }
 
     protected Persona (int dni, string apellido, string nombre)
     {
