@@ -33,7 +33,7 @@ class Titular : Persona {
         Id = ++s_id;
     }
 
-    //imprime de dos maneras :(
+    //imprime de dos maneras :( --> claro... como lo hice arriba y en la clase Persona (cuando imprima con mas info usa el toString de Titular, cuando imprima con menos info usa el toString de Persona)
     public override string ToString() => DNI + " " + Apellido + ", " + Nombre + " " + Direccion + " " + Telefono + " " + Email;
 
     public override string ToString() => DNI + " " + Apellido + ", " + Nombre; //solucionar
