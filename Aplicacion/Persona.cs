@@ -19,4 +19,8 @@ abstract class Persona {
 //  ves  lo  que  escriboo???
     
     // chi
+    
+    //joya
+    
+    
 }
