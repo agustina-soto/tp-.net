@@ -9,7 +9,11 @@ class Vehiculo {
     public int FechaFabricacion { get; set; }
     public int TitularId { get; set; }
 
-    public Vehiculo(){
-
+    public Vehiculo (string dominio, string marca, DateTime fechaFabricacion, int titularId){
+        Id = ++s_id;
+        Dominio = dominio;
+        Marca = marca;
+        FechaFabricacion = fechaFabricacion;
+        TitularId = titularId;
     }
 }
