@@ -19,7 +19,7 @@ class Titular : Persona {
     private static int s_id = 0;
     public string? Direccion { get; set; }
     public string? Email { get; set; }
-    public List<Vehiculo>? Vehiculos { get; private set; } //esta bien el modificar de acceso???
+    public List<Vehiculo>? Vehiculos { get; private set; } //esta bien el modificador de acceso???
 
     public Titular (int dni, string apellido, string nombre) : base(dni, apellido, nombre){ //siempre se instancia con este en console
         Id = ++s_id;
