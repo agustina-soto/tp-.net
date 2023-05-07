@@ -44,7 +44,7 @@ class Titular : Persona {
 
         if (! encontre) //si no lo encontre lo agrego al archivo
         {
-            StreamWriter sw = new StreamWriter ("C:\\Users\\Maite\\Desktop\\archivoDeTexto.txt"); //uso el stream writer para abrir, escribir y cerrar archivos
+            StreamWriter sw = new StreamWriter ("C:\\Users\\Maite\\Desktop\\archivoDeTexto.txt", true); //uso el stream writer para abrir, escribir y cerrar archivos
             //t.Id = t.Id++; //en el tp dice que se debe incrementar una vez se agrege al archivo?
             sw.WriteLine(t.ToString()); //sobre escribe
             sw.Close();
