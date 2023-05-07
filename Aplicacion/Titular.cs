@@ -21,5 +21,39 @@ class Titular : Persona {
     }
 
     public override string ToString() => base.ToString() + " " + this.Direccion + " " + base.Telefono + " " + this.Email;
+    
+    /*
+    public void agregarTitular (Titular t)
+    {
+        StreamReader sr = new StreamReader ("C:\\Users\\Maite\\Desktop\\archivoDeTexto.txt");
+        string? linea;
+        bool encontre = false;
+
+        while (!sr.EndOfStream)
+        {
+            linea = sr.ReadLine();
+            string[] wd = linea.Split(' ');
+            
+            if (t.Id == Int32.Parse(wd[0]))
+            {
+                encontre = true;
+                break;
+            }
+        }
+        sr.Close();
+
+        if (! encontre) //si no lo encontre lo agrego al archivo
+        {
+            StreamWriter sw = new StreamWriter ("C:\\Users\\Maite\\Desktop\\archivoDeTexto.txt"); //uso el stream writer para abrir, escribir y cerrar archivos
+            //t.Id = t.Id++; //en el tp dice que se debe incrementar una vez se agrege al archivo?
+            sw.WriteLine(t.ToString()); //sobre escribe
+            sw.Close();
+        }
+        else
+        {
+            Console.WriteLine("El titular a agregar ya existe en el sistema");
+        }
+    }
+    */
 
 }
