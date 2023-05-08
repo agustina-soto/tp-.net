@@ -1,10 +1,8 @@
 namespace aplicacion;
 
-class Poliza: IRepositorioPoliza //interfaz para aplicar la inyeccion   
+class Poliza
 {
-
-    private static int s_id = 0;
-    public int Id { get; }
+    public int Id { get; private set; } 
     public double ValorAsegurado { get; set; }
     public double Franquicia { get; set; }
     public string TipoCobertura { get; set; }
@@ -13,7 +11,6 @@ class Poliza: IRepositorioPoliza //interfaz para aplicar la inyeccion
     public int VehiculoId { get; private set; }
 
     public Poliza(double valorAsegurado, double franquicia, string tipoCobertura, DateTime inicioVigencia, DateTime finVigencia, int idVehiculo){
-        Id = ++s_id;
         ValorAsegurado = valorAsegurado;
         Franquicia = franquicia;
         TipoCobertura = tipoCobertura;
@@ -21,4 +18,9 @@ class Poliza: IRepositorioPoliza //interfaz para aplicar la inyeccion
         FinVigencia = finVigencia;
         VehiculoId = idVehiculo;
     }
+
+    public void actualizarId (int id) => Id = id;
+
+    public override string ToString () => Id + " " + ValorAsegurado + " " + Franquicia + " " + TipoCobertura + " " + InicioVigencia + " " + FinVigencia + " " + VehiculoId;
+
 }
