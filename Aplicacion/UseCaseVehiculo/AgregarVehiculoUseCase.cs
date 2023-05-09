@@ -1,4 +1,4 @@
-namespace Entrega.Aplicacion;
+namespace Aseguradora.Aplicacion;
 
 class AgregarVehiculoUseCase
 {
