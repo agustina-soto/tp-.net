@@ -13,7 +13,21 @@ class AgregarVehiculoUseCase
 
     public void Ejecutar (Vehiculo v)
     {
-        _repoVehiculo.agregarVehiculo(v);
-        //tambien se debe moficar la lista de vehiculos en titular
+        try
+        {
+            int pos = _repoTitular.listarTitulares().FindIndex(x => x.Id == v.TitularId);
+            if (pos >= 0)
+            {
+                _repoVehiculo.agregarVehiculo(v);
+            }
+            else
+            {
+                throw new Exception("No existe el titular con Id = " + v.TitularId);
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
     } 
 }
