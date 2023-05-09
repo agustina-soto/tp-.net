@@ -3,39 +3,36 @@ namespace Entrega.Aplicacion; //no va aca sino en entrega.repositorio
 class RepositorioTitular : IRepositorioTitular
 {
     private static int s_id = 0;
+    private List<Titular> listaTitulares = new List<Titular>();
+    private StreamWriter archivo_titulares;
 
-    //abre el archivo y devuelve true si se encuntre, caso contrario devuelve false
-    public bool existe (Titular t)
+    public RepositorioTitular ()
     {
-        StreamReader sr = new StreamReader ("C:\\Users\\Maite\\Desktop\\archivoDeTexto.txt"); //abre el archivo que se encuntra en la rura indicada
-        int result;
-        bool found = false;
+        archivo_titulares = File.CreateText("C:\\archivo_repositorio_titulares.txt");
+        archivo_titulares.Close();
+    }
 
-        while (! sr.EndOfStream) //mientras no sea el final del archivo sigo procesando
-        { 
-            string[] word = sr.ReadLine().Split(' ');
-
-            int.TryParse(word[1], out result); //en la pos 1 esta el dni, chequea que no haya incopatibilidad de tipos
-            if (t.DNI == result) //si encuentro el titular
+    public void actualizarArchivo ()
+    {
+        using (StreamWriter sw = new StreamWriter ("C:\\archivo_repositorio_titulares.txt", true))
+        {
+            foreach (Titular t in listaTitulares)
             {
-                found = true; // y devuelvo true
+                sw.WriteLine(t.Id + " " + t.ToString());
             }
         }
-
-        sr.Close();
-        return found; //si llego a este punto es xq se proceso todo el archivo y no lo encontro y devuelve false 
     }
 
     public void agregarTitular(Titular t)
     {
         try
         {
-            if (! existe(t)) //si no lo encontre lo agrego al archivo
+            int pos = listaTitulares.FindIndex(x => x.DNI == t.DNI);
+            if (pos == -1) //si no lo encontre lo agrego al archivo
             {
-                StreamWriter sw = new StreamWriter ("C:\\Users\\Maite\\Desktop\\archivoDeTexto.txt", true); //uso el stream writer para abrir, escribir y cerrar archivos
-                t.Id = ++s_id; //deberia de cambiar el alcance de id
-                sw.WriteLine(t.Id + " " + t.ToString()); //agrego la info en el archivo
-                sw.Close();
+                t.actualizarId(++s_id);
+                listaTitulares.Add(t);
+                actualizarArchivo();
             }
             else
             {
@@ -44,26 +41,55 @@ class RepositorioTitular : IRepositorioTitular
         }
         catch
         {
-            throw; //relanza la excepcion, los objtos que llamen a "agregarTitular" deben manejar la excepcion
+            throw; //relanza la excepcion, los objetos que llamen a "agregarTitular" deben manejar la excepcion
         }
-    }
+    } 
 
     public void eliminarTitular(int id)
     {
-
+        try
+        {
+            int pos = listaTitulares.FindIndex(x => x.Id == id); //devuelve -1 si no lo encuntra 
+            if (pos >= 0) //encontre el titular
+            {
+                listaTitulares.RemoveAt(pos);
+                actualizarArchivo();
+            }
+            else
+            {
+                throw new Exception("No existe un titular con Id = " + id); 
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
     }
     public void modificarTitular(Titular t)
     {
-
+        try
+        {
+            int pos = listaTitulares.FindIndex(x => x.DNI == t.DNI);
+            if (pos >= 0) 
+            {
+                listaTitulares.Insert(pos, t);
+                actualizarArchivo();
+            }
+            else
+            {
+                throw new Exception("No existe un titular con DNI = " + t.DNI);
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
     }
-    public List<Titular> listarTitulares()
-    {
-        List<Titular> list = new List<Titular>();
-        return list;
-    }
+    public List<Titular> listarTitulares() => listaTitulares;
 
     public void listarTitularesConSusVehiculos()
     {
-        
+
     }
+}
 }
