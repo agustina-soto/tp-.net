@@ -1,4 +1,4 @@
-namespace aplicacion;
+namespace Aseguradora.Aplicacion;
 
 abstract class Persona {
 
